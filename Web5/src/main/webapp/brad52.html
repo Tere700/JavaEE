@@ -1,0 +1,58 @@
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+	<script>
+		function test1() {
+			//console.log("test1()");
+			$('#id1').load("brad53.jsp?max=" + $('#max').val());
+		}
+		
+		function test2(){
+			$.get("brad53.jsp?max=" + $('#max').val(), 
+					function(data, status){
+				if (status == 'success'){
+					$('#id1').html(data);
+				}
+			});
+		}
+		
+		function test3(){
+			$.post("brad53.jsp", 
+				{
+				"max":$('#max').val()
+				}, //是物件
+				function(data, status){
+					if (status == 'success'){
+					$('#id1').html(data);
+				}
+			});
+		}
+		
+		function test4(){
+			$.ajax({
+				url:"brad53.jsp?max=" + $('#max').val(),
+				success: function(res){
+					$('#id1').html(res);
+					//裡面是物件
+				},
+			});
+		}
+	</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<input type="number" id="max" />
+		<button onclick="test1()">Test1</button>
+		<button onclick="test2()">Test2</button>
+		<button onclick="test3()">Test3</button>
+		<button onclick="test4()">Test4</button>
+		<!-- <input type = "button" onclick="test1()" value="test1()" />  -->
+		<br />
+		<div id="id1"></div>
+	</body>
+</html>
