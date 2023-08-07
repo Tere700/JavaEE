@@ -6,11 +6,11 @@
 	request.setCharacterEncoding("UTF-8");
 	String account = request.getParameter("account");
 
-	Class.forName("com.mysql.cj,jdbc,driver");
+	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(
 			"jdbc:mysql://localhost/iii", "root", "root");
 
-	String sql = "SELECT * FRPM member WHERE account = ?";
+	String sql = "SELECT * FROM member WHERE account = ?";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, account);
 	ResultSet rs = pstmt.executeQuery();
@@ -18,6 +18,6 @@
 	if(rs.next()){
 		out.print("Account already EXIST!");
 	}else{
-		out.print("Account allow to use");
+		out.print("");
 	}
 %>

@@ -37,6 +37,18 @@
 				}
 			});
 		}
+		
+		function test5(){
+			$.ajax({
+				url:"brad53.jsp",
+				method: "post",
+				data:{"max":$('#max').val()},
+				success: function(res){
+					$('#id1').html(res);
+					//裡面是物件
+				}
+			});
+		}
 	</script>
 
 <!DOCTYPE html>
@@ -51,6 +63,7 @@
 		<button onclick="test2()">Test2</button>
 		<button onclick="test3()">Test3</button>
 		<button onclick="test4()">Test4</button>
+		<button onclick="test5()">Test5</button>
 		<!-- <input type = "button" onclick="test1()" value="test1()" />  -->
 		<br />
 		<div id="id1"></div>
