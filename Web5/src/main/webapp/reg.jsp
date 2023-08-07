@@ -14,7 +14,7 @@
 	xhttp.onload = callback; 
 	function callback(){
 		console.log("callback()")
-		document.getElementById("mesg").innerHTML = xhttp.resposeText;
+		document.getElementById("mesg").innerHTML = xhttp.responseText;
 	}
 	
 	function test1(){

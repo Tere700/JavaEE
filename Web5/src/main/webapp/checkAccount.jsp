@@ -8,7 +8,7 @@
 	String account = request.getParameter("account");
 	String passwd = request.getParameter("passwd");
 	
-	Class.forName("com.mysql.cj,jdbc,driver");
+	Class.forName("com.mysql.cj.jdbc.driver");
 	Connection conn = DriverManager.getConnection(
 			"jdbc:mysql://localhost/iii", "root", "root");
 	
