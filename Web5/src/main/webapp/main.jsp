@@ -51,6 +51,7 @@
 			<th>Feature</th>
 			<th>County</th>
 			<th>Delete</th>
+			<th>Edit</th>
 		</tr>
 		<c:forEach items="${rs.rows }" var="row">
 			<tr>
@@ -65,6 +66,7 @@
 					}
 				</script>
 				<td><a href="?delid=${row.id }" onclick="return delAlert('${row.name }');">Del</a></td>
+				<td><a href="?editGift.jsp?editid=${row.id }">Del</a></td>
 			</tr>
 		</c:forEach>
 	</table>
